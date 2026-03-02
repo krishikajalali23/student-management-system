@@ -1,7 +1,12 @@
 const login = (user) => {
-  if (user.role === "student") {
-    return "Student Dashboard";
+  switch (user.role) {
+    case "student":
+      return "Student Dashboard";
+    case "admin":
+      return "Admin Dashboard";
+    default:
+      return "Unauthorized";
   }
-  return "Unauthorized";
 };
+
 module.exports = login;
